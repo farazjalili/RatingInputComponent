@@ -1,0 +1,5 @@
+<span *ngFor="let starred of stars; let i = index" 
+      (click)="rate(i + (starred ? (value > i + 1 ? 1 : 0) : 1))">
+  <ng-container *ngIf="starred; else noStar"><i class="fas fa-star star"></i></ng-container>
+  <ng-template #noStar><i class="far fa-star"></i></ng-template>
+</span>
